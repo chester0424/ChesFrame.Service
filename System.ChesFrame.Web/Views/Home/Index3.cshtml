@@ -1,0 +1,133 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>XXX后台</title>
+        @Scripts.Render("~/bundles/jquery")
+    <link href="~/Content/CSS/css/indexlayout3.css" rel="stylesheet" />
+   
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="head-left">
+                <div class="brand">
+                    <div class="brand-font">
+                        CHESFRAME后台
+                    </div>
+                </div>
+            </div>
+            <div class="head-right">
+                <div class="pullright">
+                    <div class="remark">
+                        <span class="login-name">Chester</span>
+                        <span class="hover-hander">注销</span>
+                        <span>(2014年6月17日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="sidebar">
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a>商品管理</a>
+                            <ul class="">
+                                <li><a>商品查询</a></li>
+                                <li><a>商品编辑</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>财务管理</a>
+                            <ul class="">
+                                <li><a data-targeturl="">财务结算</a></li>
+                                <li>
+                                    <a>财务报表</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>商品111管理</a>
+                            <ul class="">
+                                <li><a>商品查询11</a></li>
+                                <li><a>商品编辑111</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>财务管理</a>
+                            <ul class="">
+                                <li><a data-targeturl="http://www.baidu.com">财务结算111</a></li>
+                                <li>
+                                    <a>财务报表111</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Person管理</a>
+                            <ul class="">
+                                <li><a data-targeturl="/Person/Index">Person查询</a></li>
+                                <li>
+                                    <a>Person编辑</a>
+                                    <ul>
+                                        <li><a>Person编辑3</a></li>
+                                        <li><a>Person编辑3</a></li>
+                                        <li><a>Person编辑3</a></li>
+                                        <li><a>Person编辑3</a></li>
+                                        <li><a>Person编辑3</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>系统管理</a>
+                            <ul class="">
+                                <li><a data-targeturl="/Person/Index">菜单管理</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+               
+
+                <div>
+                    <div>@*Chester*@</div>
+                </div>
+            </div>
+            <div class="main-content">
+                <iframe id="main-iframe" style="height: inherit; width: 100%; border: none;overflow-y:hidden"></iframe>
+            </div>
+        </div>
+        <div class="foot">
+
+        </div>
+        <script src="~/Content/Scripts/common/JChesPage.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $(".menu a").click(function () {
+                        var targeturl = $(this).data("targeturl");
+                        if (targeturl != undefined && targeturl != null && targeturl != "") {
+                            alert(targeturl);
+                            $("#main-iframe").attr("src", targeturl);
+                            $(".menu a.curent").removeClass("curent");
+                            $(this).addClass("curent");
+                    }
+                });
+
+                //调整窗体显示
+                function windowResize() {
+                    $(".content").height($(document).height() - $(".content").offset().top);
+                }
+                $(window).resize(windowResize);
+                $(window).load(windowResize);
+            });
+        </script>
+
+    </div>
+</body>
+
+</html>

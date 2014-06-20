@@ -1,0 +1,5 @@
+﻿
+1.服务已经方法定义，一个方法代表这一个操作，方法名需要动词名称
+	由于一个服务中包好一组或者多组相关的操作，为了区分不同的组，一般一个组有一个标志 
+	比如 权限 Limite,菜单Menu
+	他们对应的操作可能就会是：LimiteGet,LimieteQuery,LimiteDel,LimiteUpdate

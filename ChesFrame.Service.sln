@@ -1,0 +1,90 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ChesFrame.IDataAccess", "System.ChesFrame.IDataAccess\System.ChesFrame.IDataAccess.csproj", "{110D818C-B344-4CE2-B8F0-76D4D4F20F60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ChesFrame.DataAccess", "System.ChesFrame.DataAccess\System.ChesFrame.DataAccess.csproj", "{4F697478-92A2-4F8F-8213-E904BE1417DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ChesFrame.BizProcessor", "System.ChesFrame.BizProcessor\System.ChesFrame.BizProcessor.csproj", "{969A8A68-DB9B-4DCF-8126-A6EC76312C16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ChesFrame.IService", "System.ChesFrame.IService\System.ChesFrame.IService.csproj", "{D35F4073-78DC-4507-A12B-F41035270254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ChesFrame.Service", "System.ChesFrame.Service\System.ChesFrame.Service.csproj", "{1747651B-1237-4E91-8C66-70586BAB7B79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ChesFrame.Service.Host", "System.ChesFrame.Service.Host\System.ChesFrame.Service.Host.csproj", "{EEF04D66-F003-4B3A-A6F7-38A53DA7BE65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ChesFrame.Utility", "System.ChesFrame.Utility\System.ChesFrame.Utility.csproj", "{F7645978-BA00-4032-B855-B054B507EC98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00_Common", "00_Common", "{A50BAC49-645C-4C40-99A5-C4196BD05ECE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_Service", "01_Service", "{A7EE1705-91DD-411B-B9B9-9D71A6910AFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_BizProcess", "02_BizProcess", "{4A1340C2-DC29-4F5B-9665-75BB3AD3079A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_DataAccess", "03_DataAccess", "{BC3DA32F-74F3-45C4-B681-7913487764BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04_Service.Host", "04_Service.Host", "{97321550-7705-485F-8E6C-A29F3EF56C1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ChesFrame.Entity", "System.ChesFrame.Entity\System.ChesFrame.Entity.csproj", "{FCDAD58B-9185-4033-B563-3B95C8F7E89F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ChesFrame.DocManager", "System.ChesFrame.DocManager\System.ChesFrame.DocManager.csproj", "{F96DD747-9C4F-4B0E-8D88-D96E2FE126B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{110D818C-B344-4CE2-B8F0-76D4D4F20F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110D818C-B344-4CE2-B8F0-76D4D4F20F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110D818C-B344-4CE2-B8F0-76D4D4F20F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110D818C-B344-4CE2-B8F0-76D4D4F20F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F697478-92A2-4F8F-8213-E904BE1417DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F697478-92A2-4F8F-8213-E904BE1417DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F697478-92A2-4F8F-8213-E904BE1417DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F697478-92A2-4F8F-8213-E904BE1417DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{969A8A68-DB9B-4DCF-8126-A6EC76312C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969A8A68-DB9B-4DCF-8126-A6EC76312C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969A8A68-DB9B-4DCF-8126-A6EC76312C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969A8A68-DB9B-4DCF-8126-A6EC76312C16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35F4073-78DC-4507-A12B-F41035270254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35F4073-78DC-4507-A12B-F41035270254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35F4073-78DC-4507-A12B-F41035270254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35F4073-78DC-4507-A12B-F41035270254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1747651B-1237-4E91-8C66-70586BAB7B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1747651B-1237-4E91-8C66-70586BAB7B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1747651B-1237-4E91-8C66-70586BAB7B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1747651B-1237-4E91-8C66-70586BAB7B79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF04D66-F003-4B3A-A6F7-38A53DA7BE65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF04D66-F003-4B3A-A6F7-38A53DA7BE65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF04D66-F003-4B3A-A6F7-38A53DA7BE65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF04D66-F003-4B3A-A6F7-38A53DA7BE65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7645978-BA00-4032-B855-B054B507EC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7645978-BA00-4032-B855-B054B507EC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7645978-BA00-4032-B855-B054B507EC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7645978-BA00-4032-B855-B054B507EC98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCDAD58B-9185-4033-B563-3B95C8F7E89F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDAD58B-9185-4033-B563-3B95C8F7E89F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCDAD58B-9185-4033-B563-3B95C8F7E89F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCDAD58B-9185-4033-B563-3B95C8F7E89F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F96DD747-9C4F-4B0E-8D88-D96E2FE126B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F96DD747-9C4F-4B0E-8D88-D96E2FE126B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F96DD747-9C4F-4B0E-8D88-D96E2FE126B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F96DD747-9C4F-4B0E-8D88-D96E2FE126B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4F697478-92A2-4F8F-8213-E904BE1417DA} = {BC3DA32F-74F3-45C4-B681-7913487764BA}
+		{110D818C-B344-4CE2-B8F0-76D4D4F20F60} = {BC3DA32F-74F3-45C4-B681-7913487764BA}
+		{969A8A68-DB9B-4DCF-8126-A6EC76312C16} = {4A1340C2-DC29-4F5B-9665-75BB3AD3079A}
+		{1747651B-1237-4E91-8C66-70586BAB7B79} = {A7EE1705-91DD-411B-B9B9-9D71A6910AFF}
+		{D35F4073-78DC-4507-A12B-F41035270254} = {A7EE1705-91DD-411B-B9B9-9D71A6910AFF}
+		{EEF04D66-F003-4B3A-A6F7-38A53DA7BE65} = {97321550-7705-485F-8E6C-A29F3EF56C1F}
+		{F7645978-BA00-4032-B855-B054B507EC98} = {A50BAC49-645C-4C40-99A5-C4196BD05ECE}
+		{FCDAD58B-9185-4033-B563-3B95C8F7E89F} = {A50BAC49-645C-4C40-99A5-C4196BD05ECE}
+	EndGlobalSection
+EndGlobal

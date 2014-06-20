@@ -1,0 +1,33 @@
+﻿Layer 第三方弹窗弹层插件：http://sentsin.com/jquery/layer/
+
+
+
+
+
+
+
+
+
+CSS 书写
+
+1.结构
+	以模块为基础编写，比如：HTML body 主框架（Header siderBar body foot） form 等
+
+2.最小原子化
+	把共有的一些属性和属性值进行包装成一个class,并且是最下化的封装 尽量只做一个相关的样式
+
+3.样式的修改
+	采用增加class的方式，后边的class会替换掉存在的相同class中样式名相同的样式值，在新的样式中构建
+
+
+
+
+
+界面开发
+主界面是用自己的样式，并且功能上按照组件的方式，风格上类似于BootStrap
+
+包含的CSS JS 模块：
+	1.bootstrap
+	2.bootstrap基于本地的调整文件（目的是做到尊正CSS OA原则不覆盖bootstrap定义的任何样式，如果需要修改 则使用覆盖的方式）
+	3.本地css 和 js 
+	4.为了本地js和CSS的友好组织，页面引入（ControllerName+ViewName）进行调用

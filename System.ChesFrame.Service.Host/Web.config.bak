@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  有关如何配置 ASP.NET 应用程序的详细信息，请访问
+  http://go.microsoft.com/fwlink/?LinkId=301880
+  -->
+<configuration>
+  <appSettings>
+    <add key="webpages:Version" value="3.0.0.0" />
+    <add key="webpages:Enabled" value="false" />
+     <add key="ClientValidationEnabled" value="true" />
+    <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+  </appSettings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime targetFramework="4.5" />
+  </system.web>
+  <system.serviceModel>
+    <services>
+      <service name="System.ChesFrame.Service.PersonSvc">
+        <host >
+          <baseAddresses>
+            <add baseAddress="http://localhost:80/Service/IPersonSvc"/>
+          </baseAddresses>
+        </host>
+        <endpoint address="" binding="basicHttpBinding" contract="System.ChesFrame.IService.IPersonSvc"/>
+      </service>
+    </services>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior>
+           <!--为避免泄漏元数据信息，请在部署前将以下值设置为 false--> 
+          <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true"/>
+           <!--要接收故障异常详细信息以进行调试，请将以下值设置为 true。在部署前设置为 false 以避免泄漏异常信息--> 
+          <serviceDebug includeExceptionDetailInFaults="false"/>
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <protocolMapping>
+      <add binding="basicHttpsBinding" scheme="https" />
+      <add binding="basicHttpBinding" scheme="http" />
+    </protocolMapping>
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" >
+      <serviceActivations>
+        <!--<add factory="System.ServiceModel.Activation.ServiceHostFactory"
+         relativeAddress="http://localhost:7062/WcfTest.Service/PersonSvc.svc"
+        service="WcfTest.Service.PersonSvc" />-->-->
+        <add  service="WcfTest.Service.PersonSvc" relativeAddress="/WcfTest.Service/IPersonSvc"
+        />-->
+      </serviceActivations>
+    </serviceHostingEnvironment>
+  </system.serviceModel>
+</configuration>

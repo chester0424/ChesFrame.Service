@@ -1,0 +1,35 @@
+﻿@{
+    var menuModelList = new List<System.ChesFrame.Web.Model.SystemManage.MenuModel>();
+
+    menuModelList = System.ChesFrame.Web.Facade.SystemManageFacade.MenuGetAll();
+        
+    Func<List<System.ChesFrame.Web.Model.SystemManage.MenuModel>,string> MenuModelToHtml = null;
+
+    MenuModelToHtml = (s) =>
+    {
+        if (s != null && s.Count > 0)
+        {
+            System.Text.StringBuilder builder = new System.Text.StringBuilder();
+            builder.Append("<ul>");
+            foreach (var sub in s)
+            {
+                builder.Append("<li>");
+                builder.Append(string.Format("<a href=\"{0}\" data-sysno=\"{2}\">{1}</a>", sub.Url, sub.Name, sub.SysNo));
+                if (sub.SubMenu != null && sub.SubMenu.Count > 0)
+                {
+                    var subHtml = MenuModelToHtml(sub.SubMenu);
+                    builder.Append(subHtml);
+                }
+
+                builder.Append("</li>");
+            }
+            builder.Append("</ul>");
+
+            return builder.ToString();
+        }
+        return "";
+    };
+
+    var html = MenuModelToHtml(menuModelList);
+    @(new HtmlString(html)) 
+}

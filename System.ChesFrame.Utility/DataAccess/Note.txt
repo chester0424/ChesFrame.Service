@@ -1,0 +1,3 @@
+﻿配置编译生成指令
+
+xcopy /s /y  "$(ProjectDir)DataConfigFile\*.*" "$(TargetDir)Config"

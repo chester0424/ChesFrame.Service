@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "GetAllPerson";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h4>查询Person</h4>
+<hr />
+@*<div>
+    <table class="table table-striped">
+        <thead>
+            <tr style="background-color:pink">
+                <td>System</td>
+                <td>Name</td>
+                <td>Age</td>
+                <td>Phone</td>
+                <td>Email</td>
+                <td>Remark</td>
+                <td>Operation</td>
+            </tr>
+        </thead>
+        <tbody class="tab-content">
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>Edit</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>Edit</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>Edit</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul class="pagination" style="margin-right:50px;margin-top:0px;">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+    @using System.ChesFrame.Web.Common;
+    @Html.RenderNavigation();
+</div>
+<div id="example"></div>
+<script type='text/javascript'>
+    var options = {
+        alignment:'center',
+        currentPage:1,
+        numberOfPages:5,
+        totalPages: 600,
+        pageUrl: function(type, page, current){
+            return "${ctx}/servlet/StudentServlet?pageNo="+page;
+        }
+
+    };
+    $('#example').bootstrapPaginator(options);
+</script>
+
+<span style="font-family:'sans serif, tahoma, verdana, helvetica';">
+    <span style="white-space:normal;"> </span>
+</span>*@
+
+@{
+    var allPerson = ViewBag.AllPerson;
+    foreach (System.ChesFrame.Web.Model.PersonModel sub in allPerson)
+    {
+        var ht = string.Format("<span> {0} {1} {2}</span><br/>", sub.Remark.ToString(), sub.Name, sub.Email);
+        @Html.Raw(ht);
+    }
+}

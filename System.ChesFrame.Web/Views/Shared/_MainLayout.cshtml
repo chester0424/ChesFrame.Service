@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquerybootstrap")
+    
+    @Scripts.Render("~/bundles/jschesframe")
+
+    @Styles.Render("~/bundles/cssbootstrap")
+    @Styles.Render("~/bundles/csschesframe")
+
+    @Scripts.Render("~/bundles/layerjs")
+    @Styles.Render("~/bundles/layercss")
+
+</head>
+<body>
+    <div >
+       @RenderBody()
+    </div>
+        
+</body>
+</html>

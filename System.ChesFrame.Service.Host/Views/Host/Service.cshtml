@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Service";
+}
+
+<h2>All Discovered Service</h2>
+
+<hr />
+<table>
+    <thead>
+        <tr>
+            <td></td>
+            <td>服务</td>
+            <td>协定</td>
+            <td>服务地址</td>
+        </tr>
+    </thead>
+    <tbody>
+            @{  
+                List<string> hostInfo = ViewBag.HostInfo;
+                if (hostInfo != null)
+                {
+                    int count = 0;
+                    foreach (var sub in hostInfo)
+                    {
+                        count++;
+                        var info = sub.Split(new string[] { "," }, StringSplitOptions.None);
+                    <tr>
+                        <td>@count</td>
+                        <td>@info[0]</td>
+                        <td>@info[1]</td>
+                        <td><a href="@info[2]" target="_blank">@info[2]</a></td>
+                    </tr>
+                    }
+                }
+            }
+        </tbody>
+</table>
+<hr style ="margin-top:50px;" />
+   
+<style>
+    table {
+        table-layout:fixed;
+        border-collapse:collapse;
+        border-width:1px;
+        border-color:#808080;
+        border-style:solid;
+    }
+        table thead tr {
+            background-color:#0094ff;
+            color:white;
+            font-weight:bold;
+        }
+
+        table tbody td {
+            font-size: 11px;
+            padding: 5px;
+            border-width: 1px;
+            border-color: #808080;
+            border-style: solid;
+        }
+
+        table a {
+            text-decoration:none;
+            color:#082bb5;
+        }
+</style>

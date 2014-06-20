@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+     Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<hr />
+<form id="queryCondition" class="form">
+    <label for="txtname">姓名：</label><input type="text" id="txtname" name="Name" placeholder="请输入姓名" class="" /><br />
+    <label for="txtphone">电话：</label><input type="text" id="txtphone" name="Phone" placeholder="请输入手机号码" class="" /><br/>
+    <label for="txtphone">年龄：</label><input type="text" id="txtAge" name="Age" placeholder="请输入数字" class="" />
+</form>
+<div id="tempData"></div>
+<hr />
+<input type="button" id="btnQuery" class="btn btn-success btn-sm" value="查询" />
+<hr />
+<div class="containner">
+    <table id="personGrid" class="table">
+        <thead class="grid-head">
+            <tr class="grid-title">
+                <th data-sortby="SysNo">编号</th>
+                <th data-sortby="Name">姓名</th>
+                <th data-sortby="Age">年龄</th>
+                <th data-sortby="Phone">电话</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody class="grid-body">
+            <tr class="grid-body-row">
+                <td>
+                    @*<input type="text" data-bind="value:SysNo" />*@
+                    {data-bind:SysNo}
+                </td>
+                <td>{data-bind:Name}</td>
+                <td>{data-bind:Age}</td>
+                <td>{data-bind:Phone}</td>
+                <td>
+                    <a href="#" data-bind="value:SysNo" operation="edit">编辑</a>&nbsp;
+                    <a href="#" data-bind="value:SysNo" operation="del">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" id="layerTester"  value="弹矿测试"/>
+    <input type="button" id="asycFrom" value="异步Form测试" />
+    <input type="button" id="asycFrom2" value="异步Form测试2" />
+</div>
+<script src="~/Content/Scripts/common/JChesPage.js"></script>
+<script>
+
+    $(function () {
+
+        var jChesPage = new window.jChes.jChesPage();
+        jChesPage.Init("personGrid", {
+            url: "/Person/QueryPerson",
+            method: "POST",
+            maxShowPageCount: 5,
+            QueryData: function () {
+                var data = {
+                    Name: $("#txtname").val(),
+                    Phone: $("#txtphone").val(),
+                    Age: $("#txtAge").val()
+                };
+
+                return data;
+            },
+            onRowBinded: function (row, data) {
+                $(row).find("[operation='edit']").click(function () {
+                    alert(data.SysNo);
+                });
+                $(row).find("[operation='del']").click(function () {
+                    alert("确定删除" + data.Name + "？");
+                });
+            }
+        })
+
+        $("#btnQuery").click(function () {
+            jChesPage.Query();
+        });
+
+        $('#layerTester').on('click', function () {
+            layer.alert('test', 2);
+        });
+
+        $("#asycFrom").click(function () {
+            $.post("/Person/FormInfoToEntity", $("#queryCondition").serialize());//或者 serializeArray()   form参数提交
+        });
+
+        $("#asycFrom2").click(function () {
+            
+            var data = {
+                Name: $("#txtname").val(),
+                Phone: $("#txtphone").val(),
+                Age: $("#txtAge").val()
+            };
+
+
+            //data = encodeURIComponent(JSON.stringify(data));
+            data = (JSON.stringify(data));
+
+            $.post("/Person/FormInfoToEntity2", {"queryKey":data});//或者 serializeArray()   form参数提交
+        });
+    });
+</script>

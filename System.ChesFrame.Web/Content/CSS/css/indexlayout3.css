@@ -1,0 +1,221 @@
+﻿body {
+    margin: 0px !important;
+    padding: 0px !important;
+    font-size: 13px !important;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.head {
+    height: 40px;
+    /*background: -webkit-gradient(linear, 0 0, 0 100%, from(#438EB9), to(#8BC4E5));*/ /*Webkit;*/
+    /*background: -moz-linear-gradient(top, #438EB9,#8BC4E5);*/ /*Mozilla*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#438EB9,endColorstr=#8BC4E5,grandientType=1);*/ /*IE*/
+    background-color: #438EB9;
+    border-bottom: 1px solid gray;
+}
+
+
+.content {
+    display: block;
+    width: 100%;
+    /*background-color:pink;*/
+}
+
+.head .head-left {
+    display: inline-block;
+    float: left;
+    margin-left: 30px;
+}
+
+.head .remark {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: #e9e3e3;
+}
+
+.head .login-name {
+    font-weight: 900;
+}
+/*BRAND*/
+.brand {
+    display: inline-block;
+}
+
+    .brand .brand-font {
+        color: white;
+        vertical-align: middle;
+        margin-top: 10px;
+        width: 300px;
+        font-size: larger;
+        font-weight: 900;
+    }
+
+.brandIcon {
+    display: inline-block;
+    float: left;
+    content: " ";
+    width: 12px;
+    height: 16px;
+    margin: 0 5px 0 0;
+    background-image: url("/Content/Image/rabbit16.ico");
+}
+
+    .brandIcon.panda48 {
+        width: 40px !important;
+        height: 40px !important;
+        background-image: none;
+        background-image: url("/Content/Image/panda48.ico") !important;
+        background-position: top;
+    }
+
+    .brandIcon.panda32 {
+        width: 32px !important;
+        height: 32px !important;
+        background-image: none;
+        background-image: url("/Content/Image/panda32.ico") !important;
+    }
+
+
+.sidebar {
+    width: 200px;
+    float: left;
+    position: relative;
+    border: 1px solid #ccc;
+    border-width: 0 1px 0 0;
+    background-color: #F9F9F9;
+    padding-left: -20px;
+    height: inherit;
+    /*overflow-y: auto;*/
+    overflow-x: no-display;
+    margin-right: 30px;
+}
+
+menu {
+    color: #585858;
+}
+
+.menu ul,
+.menu li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    position: relative;
+}
+
+.menu a {
+    height: 20px;
+    display: block;
+    text-decoration: none;
+    font: 12px 宋体;
+    padding: 10px 2px 5px 50px;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    border-left: 1px solid #ccc;
+    cursor: pointer;
+}
+
+    .menu a:hover {
+        color: #438EB9;
+        border-left: 1px solid #2B7DBC;
+    }
+
+        .menu a:hover:after {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            display: block;
+            content: "";
+            position: absolute !important;
+            right: 0;
+            top: 10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent #2B7DBC transparent transparent;
+        }
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: inherit;
+    border-bottom: 1px solid #ccc;
+    z-index: 20;
+}
+
+    .menu ul li {
+        position: relative;
+        width: inherit;
+    
+    }
+        .menu >ul >li >a {
+            border-right-width: 0px;
+        }
+        .menu ul li ul {
+            left: 159px;
+            position: absolute;
+            width: 190px;
+            top: 0;
+            display: none;
+            z-index: 30;
+            background-color: #F9F9F9;
+        }
+
+            .menu ul li ul li {
+            }
+
+                .menu ul li ul li ul {
+                    left: 150px;
+                }
+
+        .menu ul li a:visited {
+            color: black;
+        }
+
+        .menu ul li a:hover {
+        }
+
+/*.menu .subfolderstyle {
+    background: url(/imagesforcode/201301/arrow-list.gif) no-repeat center right;
+}*/
+
+.menu li:hover > ul {
+    display: block;
+}
+
+.menu li ul li:hover ul {
+    display: block;
+}
+
+.main-content {
+    height: inherit;
+    overflow: auto;
+    padding-left: 10px;
+}
+
+
+
+.pullleft {
+    float: left;
+}
+
+.pullright {
+    float: right;
+}
+
+.hover-hander:hover {
+    cursor: pointer;
+}
+
+.container,
+.content,
+.main-content,
+iframe {
+    overflow: hidden;
+}

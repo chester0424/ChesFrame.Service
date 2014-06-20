@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap  >
+  <mvcSiteMapNode  title="首页" controller="" action=""  display="">
+    <mvcSiteMapNode  title="商品" controller="Product" action="Index"  description="" >
+      <mvcSiteMapNode  title="商品查询" controller="Product"  action="Query"   description="" />
+      <mvcSiteMapNode  title="商品上架" controller="Product" action="OnShelf"   description="" />
+      <mvcSiteMapNode  title="商品下架" controller="Product"  action="OffShelf"  description="" />
+    </mvcSiteMapNode>
+    <mvcSiteMapNode  title="订单" controller="Order" action="Index"   description="" >
+      <mvcSiteMapNode  title="订单查询" controller="Order" action="Query"   description="" />
+      <mvcSiteMapNode  title="订单修改" controller="Order" action="Update"  description="" />
+      <mvcSiteMapNode  title="订单详情" controller="Order" action="Detail"  description="" />
+    </mvcSiteMapNode>
+    <mvcSiteMapNode  title="财务" controller="Finance"    description="" >
+      <mvcSiteMapNode  title="财务记账" controller="Finance" action="Account"    description="" >
+        <mvcSiteMapNode  title="财务记账_流水账" controller="Finance" action="AccountFlow"    description="" />
+        <mvcSiteMapNode  title="财务记账_统计帐" controller="Finance" action="AccountStatistic"    description="" />
+      </mvcSiteMapNode>
+      <mvcSiteMapNode  title="财务记账" controller="Finance" action="Account"    description="" />
+    </mvcSiteMapNode>
+    <mvcSiteMapNode  title="仓储" controller="Store"   description="" />
+  </mvcSiteMapNode>
+</mvcSiteMap>

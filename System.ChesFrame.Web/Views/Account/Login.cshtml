@@ -1,0 +1,59 @@
+﻿@model System.ChesFrame.Web.Model.Account.LoginModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="container">
+    <div class="logintitle">
+        <span>Login,Funny Trip!!!</span>
+    </div>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-inline" }))
+    {
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+            <input type="text" class="form-control" id="exampleInputEmail2" placeholder="用户名" name="UserName">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="密码" name="PassWord">
+        </div>
+        <div class="checkbox" style="width:60px;">
+            <label>
+                <input type="checkbox" class="checkbox checkbox-inline"> 记住
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">登陆</button>
+    }
+    @{
+        if (ViewBag.ErrorMsg != null)
+        {
+            <div class="alert-danger"><span>@ViewBag.ErrorMsg</span></div>
+        }
+    }
+</div>
+
+<style type="text/css">
+    body {
+        text-align: center;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 800px;
+        margin-top: 260px;
+    }
+
+        .container .logintitle {
+            text-align: center;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .container .alert-danger {
+            margin-left: auto;
+            margin-right: auto;
+            width: 470px;
+        }
+</style>

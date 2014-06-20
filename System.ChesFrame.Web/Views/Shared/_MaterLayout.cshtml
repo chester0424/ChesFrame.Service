@@ -1,0 +1,98 @@
+﻿@{
+    //ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_PileMenuLayout.cshtml";
+}
+
+
+@{
+    var html = "";
+
+    var menuModelList = new List<System.ChesFrame.Web.Model.SystemManage.MenuModel>();
+
+    menuModelList = System.ChesFrame.Web.Facade.SystemManageFacade.MenuGetAll();
+
+    Func<List<System.ChesFrame.Web.Model.SystemManage.MenuModel>, string> MenuModelToHtml = null;
+
+    MenuModelToHtml = (s) =>
+    {
+        if (s != null && s.Count > 0)
+        {
+            System.Text.StringBuilder builder = new System.Text.StringBuilder();
+            builder.Append("<ul>");
+            foreach (var sub in s)
+            {
+                builder.Append("<li>");
+                builder.Append(string.Format("<a href=\"{0}\" data-sysno=\"{2}\">{1}</a>",
+                    string.IsNullOrEmpty(sub.Url) ? "javascript:void(0);" : sub.Url,
+                    sub.Name, sub.SysNo));
+                if (sub.SubMenu != null && sub.SubMenu.Count > 0)
+                {
+                    var subHtml = MenuModelToHtml(sub.SubMenu);
+                    builder.Append(subHtml);
+                }
+
+                builder.Append("</li>");
+            }
+            builder.Append("</ul>");
+
+            return builder.ToString();
+        }
+        return "";
+    };
+    html = MenuModelToHtml(menuModelList);
+}
+
+@{
+    var nextFlag = " > ";
+
+    var rawUrl = HttpContext.Current.Request.RawUrl;//请求原始地址
+
+    Func<List<System.ChesFrame.Web.Model.SystemManage.MenuModel>, string> FindToWord = null;
+    FindToWord = (s) =>
+    {
+        if (s != null)
+        {
+            foreach (var sub in s)
+            {
+                if (sub.Url == rawUrl)
+                {
+                    return nextFlag + sub.Name;
+                }
+                else
+                {
+                    var bread = FindToWord(sub.SubMenu);
+                    if (!string.IsNullOrEmpty(bread))
+                    {
+                        return nextFlag + string.Format("<a href=\"{0}\">{1}</a>",
+                             string.IsNullOrEmpty(sub.Url) ? "javascript:void(0);" : sub.Url,
+                             sub.Name) + bread;
+                    }
+                    continue;
+                }
+            }
+            return "";
+        }
+        else
+        {
+            return "";
+        }
+    };
+
+    var breadcrumb = FindToWord(menuModelList).TrimStart(nextFlag.ToCharArray());
+
+}
+
+
+@section _menu{
+    @(new HtmlString(html))
+}
+
+@section _breadcrumb{
+     @(new HtmlString(breadcrumb))
+}
+
+@section _content{
+    @RenderBody()
+}
+
+

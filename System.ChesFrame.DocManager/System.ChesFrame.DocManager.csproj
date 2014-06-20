@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F96DD747-9C4F-4B0E-8D88-D96E2FE126B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.ChesFrame.DocManager</RootNamespace>
+    <AssemblyName>System.ChesFrame.DocManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="会议\" />
+    <Folder Include="后期记录\" />
+    <Folder Include="数据库\数据库数据\" />
+    <Folder Include="测试\" />
+    <Folder Include="维护\" />
+    <Folder Include="设计\业务设计\商品模块\" />
+    <Folder Include="设计\业务设计\客户管理模块\" />
+    <Folder Include="设计\业务设计\支付模块\" />
+    <Folder Include="设计\业务设计\订单模块\" />
+    <Folder Include="设计\业务设计\财务模块\" />
+    <Folder Include="设计\业务设计\退换货模块\" />
+    <Folder Include="设计\边设计\" />
+    <Folder Include="进度管理\" />
+    <Folder Include="项目说明\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="数据库\数据库设计\数据库 基础数据表 设计.xls" />
+    <None Include="设计\结构设计\Portal端.doc" />
+    <None Include="设计\结构设计\数据访问层.doc" />
+    <None Include="设计\结构设计\服务和服务调用.doc" />
+    <None Include="需求\财务需求%282014.05.28）.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="数据库\脚本\CentorDB\20140528_Chester_CrateTable_ChesFrame.dbo.Person.sql" />
+    <Content Include="数据库\脚本\CentorDB\20140620_Chester_CrateTable_ChesFrame.dbo.Menu.sql" />
+    <Content Include="说明\Note.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

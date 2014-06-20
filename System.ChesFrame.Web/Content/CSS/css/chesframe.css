@@ -1,0 +1,89 @@
+﻿/*
+    Description:
+    该样式主要确定整体的风格，主要作用于主页等页面
+    
+    Data:
+    2014-6-6 10:04:18
+    Edit:
+    Chester 
+    */
+
+body {
+    background-color:#FFFFFF;
+}
+.sidebar {
+    width:198px;
+    float:left;
+    border:2px solid blue;
+
+}
+
+
+/*导航*/
+.navbar {
+margin-left: 0;
+margin-right: 0;
+border: 0;
+-webkit-box-shadow: none;
+box-shadow: none;
+border-radius: 0;
+margin: 0;
+padding-left: 0;
+padding-right: 0;
+min-height: 45px;
+position: relative;
+background: #438eb9;
+}
+
+.navbar .navbar-header {
+margin: 0!important;
+}
+
+.navbar .navbar-brand {
+color: #fff;
+font-size: 24px;
+text-shadow: none;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+
+.main-container {
+    background-color:#F2F2F2;
+        min-height:500px;
+        margin-right:10px;
+        margin-left:10px;
+}
+.main-container .main-container-inner {
+    width:80%;
+    position:relative;
+}
+
+   .main-container .main-content {
+        margin-left:220px;
+
+    }
+
+.sidebar {
+float:left;
+width:198px;
+}
+
+
+
+/*工具*/
+
+.pull-left {
+float: left!important;
+}
+.pull-right {
+float: right!important;
+}
+
+.padding-left0 {
+    padding-left:0px;
+}
+
+.form-control {
+    
+}

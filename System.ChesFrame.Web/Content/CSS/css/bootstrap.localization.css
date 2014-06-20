@@ -1,0 +1,32 @@
+﻿/*
+    Description：
+    为了更好的适应本地样式，采用bootstraplocalization.css 对 bootstrap中默认的样式做调整
+    好处：
+        1.不用需改bootstrap原生的样式
+        2.保证了样式是的本地化
+
+    Data:
+    2014-6-6 10:04:45
+    Editor:
+    Chester
+    */
+
+
+body {
+}
+
+/*导航*/
+.navbar {
+    margin-bottom:0px;
+    background:#438eb9;
+    margin-top:0px;
+    border-top-width:0px;
+}
+
+    .navbar .navbar-brand {
+        color: #fff;
+        font-size: 24px;
+        text-shadow: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
